@@ -155,7 +155,7 @@ function App() {
 
   const updateLikes = async (cardId) => {
     try {
-      const res = await axios.patch(`https://inpiration-board-haam.herokuapp.com/boards/${selectedBoard.board_id}/cards/${cardId}`);
+      await axios.patch(`https://inpiration-board-haam.herokuapp.com/boards/${selectedBoard.board_id}/cards/${cardId}`);
       onCardLikes(cardId);
     } catch(err) {
       console.error(err);

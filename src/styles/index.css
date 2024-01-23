@@ -4,7 +4,7 @@
 
 .indexBody {
     background-image: url(/src/assets/background.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     font-family: "Work Sans";

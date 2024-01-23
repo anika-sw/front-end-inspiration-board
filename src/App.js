@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://inspo-board-backend-haam.herokuapp.com/boards", {})
+      .get("https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards", {})
       .then((response) => {
         setBoardsData(response.data);
     });
@@ -45,7 +45,7 @@ function App() {
   const getBoardCards = (board_id) => {
     axios
       .get(
-        `https://inspo-board-backend-haam.herokuapp.com/boards/${board_id}/cards`
+        `https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards/${board_id}/cards`
       )
       .then((response) => {
         setCardsData(response.data.cards);
@@ -71,7 +71,7 @@ function App() {
   const createNewBoard = (newBoard) => {
     axios
       .post(
-        "https://inspo-board-backend-haam.herokuapp.com/boards", newBoard
+        "https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards", newBoard
       )
       .then((response) => {
         console.log("Response:", response.data.boards);
@@ -88,7 +88,7 @@ function App() {
   const deleteOneBoard = (board_id) => {
     axios
       .delete(
-        `https://inspo-board-backend-haam.herokuapp.com/boards/${board_id}`
+        `https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards/${board_id}`
       )
       .then((response) => {
         const newBoardsData = boardsData.filter((deletedBoard) => {
@@ -106,7 +106,7 @@ function App() {
   const deleteAllBoards = (boards) => {
     axios
     .delete(
-      "https://inspo-board-backend-haam.herokuapp.com/boards"
+      "https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards"
       )
     .then((response) => {;
       setBoardsData([])
@@ -121,7 +121,7 @@ function App() {
   const createNewCard = (message) => {
     axios
       .post(
-        `https://inspo-board-backend-haam.herokuapp.com/boards/${selectedBoard.board_id}/cards`,
+        `https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards/${selectedBoard.board_id}/cards`,
         { message }
       )
       .then((response) => {
@@ -139,7 +139,7 @@ function App() {
   const deleteCard = (cardId) => {
     axios
       .delete(
-        `https://inspo-board-backend-haam.herokuapp.com/cards/${cardId}`
+        `https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/cards/${cardId}`
       )
       .then((response) => {
         const newCardsData = cardsData.filter((deletedCard) => {
@@ -155,7 +155,7 @@ function App() {
 
   const updateLikes = async (cardId) => {
     try {
-      const res = await axios.patch(`https://inspo-board-backend-haam.herokuapp.com/boards/${selectedBoard.board_id}/cards/${cardId}`);
+      const res = await axios.patch(`https://inspo-board-backend-haam-ca5fbb17fe09.herokuapp.com/.herokuapp.com/boards/${selectedBoard.board_id}/cards/${cardId}`);
       onCardLikes(cardId);
     } catch(err) {
       console.error(err);
